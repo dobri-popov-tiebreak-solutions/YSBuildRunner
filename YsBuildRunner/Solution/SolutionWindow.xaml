@@ -1,0 +1,69 @@
+﻿<Window x:Class="YsBuildRunner.Solution.SolutionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Solution" Height="352" Width="300" WindowStartupLocation="CenterOwner" 
+		Icon="/YsBuildRunner;component/Images/app.png" ShowInTaskbar="False" Style="{StaticResource MyWindow}">
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+			<Button Click="ButtonOkClick" IsDefault="True">OK</Button>
+			<Button IsCancel="True">Cancel</Button>
+		</StackPanel>
+
+		<Grid DockPanel.Dock="Top">
+			<Grid.ColumnDefinitions>
+				<!-- param name -->
+				<ColumnDefinition Width="auto"/>
+
+				<!-- param value -->
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<!-- Name -->
+				<RowDefinition/>
+
+				<!-- Path -->
+				<RowDefinition/>
+
+				<!-- Include -->
+				<RowDefinition/>
+
+				<!-- Task-->
+				<RowDefinition/>
+
+				<!-- Platform-->
+				<RowDefinition/>
+
+				<!-- Configuration -->
+				<RowDefinition/>
+
+				<!-- Condition -->
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Column="0" Grid.Row="0">Name:</TextBlock>
+			<TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Path=Solution.SolutionName}"/>
+
+			<TextBlock Grid.Column="0" Grid.Row="1">Path:</TextBlock>
+			<TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=Solution.Path}"/>
+
+			<Label Grid.Column="0" Grid.Row="2">Include:</Label>
+			<CheckBox Grid.Column="1" Grid.Row="2" IsChecked="{Binding Path=Solution.Include}" VerticalAlignment="Center" Margin="5"/>
+
+			<Label Grid.Column="0" Grid.Row="3">Task:</Label>
+			<ComboBox Grid.Column="1" Grid.Row="3" ItemsSource="{Binding Path=TaskList}" 
+					  SelectedValue="{Binding Path=Solution.Task}" IsEnabled="{Binding Path=Solution.IsSolution}"/>
+
+			<Label Grid.Column="0" Grid.Row="4">Platform:</Label>
+			<ComboBox Grid.Column="1" Grid.Row="4" ItemsSource="{Binding Path=PlatformList}" 
+					  SelectedValue="{Binding Path=Solution.Platform}" IsEnabled="{Binding Path=Solution.IsSolution}"/>
+
+			<Label Grid.Column="0" Grid.Row="5">Configuration:</Label>
+			<ComboBox Grid.Column="1" Grid.Row="5" ItemsSource="{Binding Path=ConfigurationList}"
+					  SelectedValue="{Binding Path=Solution.Configuration}" IsEnabled="{Binding Path=Solution.IsSolution}"/>
+
+			<Label Grid.Column="0" Grid.Row="6">Fault action:</Label>
+			<ComboBox Grid.Column="1" Grid.Row="6" ItemsSource="{Binding Path=ConditionList}" SelectedValue="{Binding Path=Solution.Condition}"/>
+		</Grid>
+	</DockPanel>
+</Window>

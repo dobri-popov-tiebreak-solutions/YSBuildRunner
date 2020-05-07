@@ -1,0 +1,18 @@
+﻿<Window x:Class="YsBuildRunner.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Configuration" Height="135" Width="633"
+		Icon="/YsBuildRunner;component/Images/app.png" 
+		Style="{StaticResource MyWindow}" FocusManager.FocusedElement="{Binding ElementName=textBoxPathToMSBuild}">
+	<DockPanel LastChildFill="False">
+		<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+			<Label Target="{Binding ElementName=textBoxPathToMSBuild}">_Path to MSBuild:</Label>
+			<TextBox Name="textBoxPathToMSBuild" Width="400"/>
+			<Button Click="ButtonBrowse_Click">...</Button>
+		</StackPanel>
+		<StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+			<Button Click="ButtonOK_Click">OK</Button>
+			<Button Click="ButtonCancel_Click">Cancel</Button>
+		</StackPanel>
+	</DockPanel>
+</Window>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="YsBuildRunner.ErrorWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Error" Height="300" Width="343" FocusManager.FocusedElement="{Binding ElementName=errorText}" 
+		WindowStyle="ToolWindow" Style="{StaticResource MyWindow}">
+
+	<DockPanel>
+		<TextBlock DockPanel.Dock="Top">Error:</TextBlock>
+		<Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" IsDefault="True" IsCancel="True">Close</Button>
+		<TextBlock DockPanel.Dock="Bottom">
+			Please send to 
+			<Hyperlink Name="hyperlinkToSite" Click="HyperlinkToSiteClick" 
+					   NavigateUri="http://ysbuildrunner.codeplex.com/">http://ysbuildrunner.codeplex.com/</Hyperlink>
+		</TextBlock>
+		<TextBox DockPanel.Dock="Top" Name="errorText" IsReadOnly="True"/>
+	</DockPanel>
+</Window>
