@@ -2,14 +2,16 @@
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows.Input;
+using YsBuildRunner.Data.Commands;
 using YsBuildRunner.Data.Enums;
 
 namespace YsBuildRunner.Data
 {
-	/// <summary>
-	/// Contains solution data.
-	/// </summary>
-	[DataContract]
+    /// <summary>
+    /// Contains solution data.
+    /// </summary>
+    [DataContract]
 	public class Solution : BaseDataObject
 	{
 		#region Fields
@@ -310,6 +312,22 @@ namespace YsBuildRunner.Data
 			{
 				isSelected_ = value;
 				SetPropertyChanged("IsSelected");
+			}
+		}
+
+		public ICommand OpenSolutionCommand
+		{
+			get
+			{
+				return new OpenSolutionCommand(this);
+			}
+		}
+
+		public ICommand OpenSolutionDirectoryCommand
+		{
+			get
+			{
+				return new OpenSolutionDirectoryCommand(this);
 			}
 		}
 		#endregion

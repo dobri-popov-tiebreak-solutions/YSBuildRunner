@@ -324,9 +324,10 @@ namespace YsBuildRunner.Build
 
 			var dlg = new Solution.SolutionWindow(selectedSolution_);
 
-			selectedSolution_.BeginEdit();
+            selectedSolution_.BeginEdit();
 
-			var result = dlg.ShowDialog();
+            dlg.Owner = Application.Current.MainWindow;
+            var result = dlg.ShowDialog();
 			if (result.HasValue && result.Value)
 			{
 				selectedSolution_.EndEdit();

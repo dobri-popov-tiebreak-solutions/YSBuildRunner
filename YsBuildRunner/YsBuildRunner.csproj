@@ -145,6 +145,8 @@
     </Compile>
     <Compile Include="Data\BaseDataObject.cs" />
     <Compile Include="Data\Build.cs" />
+    <Compile Include="Data\Commands\OpenSolutionDirectoryCommand.cs" />
+    <Compile Include="Data\Commands\OpenSolutionCommand.cs" />
     <Compile Include="Data\Enums\ExecutionResult.cs" />
     <Compile Include="Data\Enums\State.cs" />
     <Compile Include="Data\Lists.cs" />
@@ -230,6 +232,10 @@
       <Project>{A5DE0583-A252-49D9-9736-51C0EDCF00CE}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\folder.png" />
+    <Resource Include="Images\visual-studio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
