@@ -207,7 +207,9 @@ namespace YsBuildRunner.Executer
 			// Full path to solution
 			var buffer = new StringBuilder(solution_.Path);
 
-			// Task
+            buffer.Append(" -t:restore -p:RestorePackagesConfig=true");
+
+            // Task
 			buffer.AppendFormat(" /t:{0}", solution_.Task);
 
 			// Configuration
@@ -223,7 +225,7 @@ namespace YsBuildRunner.Executer
 			buffer.AppendFormat(" /fileLogger /fileLoggerParameters:LogFile=\"{0}\"", solution_.LogFileName);
 
 
-			return buffer.ToString();
+            return buffer.ToString();
 		}
 
 		#endregion
