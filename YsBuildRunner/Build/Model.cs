@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -218,7 +218,7 @@ namespace YsBuildRunner.Build
 			enablementManager_.AddCommand(CommandAdd, ExecutionState.NoRunning,
 				new ListState[] { ListState.All }, null,
 				new SelectionState[] { SelectionState.All }, null);
-			enablementManager_.AddCommand(CommandEdit, ExecutionState.NoRunning,
+			enablementManager_.AddCommand(CommandEdit, ExecutionState.All,
 				new ListState[] { ListState.NoEmpty }, new ListState[] { ListState.Empty },
 				new SelectionState[] { SelectionState.OneItemSelected }, new SelectionState[] { SelectionState.NoOneItemSelected, SelectionState.ManyItemsSelected });
 			enablementManager_.AddCommand(CommandDelete, ExecutionState.NoRunning,
@@ -240,7 +240,7 @@ namespace YsBuildRunner.Build
 				new SelectionState[] { SelectionState.OneItemSelected }, new SelectionState[] { SelectionState.NoOneItemSelected, SelectionState.ManyItemsSelected },
 				new FirstElementSelectionState[] { FirstElementSelectionState.All }, new FirstElementSelectionState[] { FirstElementSelectionState.Selected },
 				new LastElementSelectionState[] { LastElementSelectionState.All }, null);
-			enablementManager_.AddCommand(CommandShowLog, ExecutionState.NoRunning,
+			enablementManager_.AddCommand(CommandShowLog, ExecutionState.All,
 				new ListState[] { ListState.NoEmpty }, new ListState[] { ListState.Empty },
 				new SelectionState[] { SelectionState.OneItemSelected }, new SelectionState[] { SelectionState.NoOneItemSelected, SelectionState.ManyItemsSelected });
 			enablementManager_.AddCommand(CommandOk, ExecutionState.NoRunning,
